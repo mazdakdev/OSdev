@@ -1,9 +1,7 @@
 mazyos | Mazdak's os
 ===========
 
-from my childhood as far as I remember I have always wanted to learn how to make an OS and also develop one 
 
-now at 2022 I'm going to start developing my own os
 
 
 Inspiration Source's
