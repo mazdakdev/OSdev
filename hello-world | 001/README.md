@@ -21,7 +21,7 @@ CPU Registers
 -------------
 To speed up the processor operations, the processor includes some internal memory storage locations, called registers. The registers store data elements for processing without having to access the memory. A limited number of registers are built into the processor chip.
 
-[Tutorialspoint]([https://www.techtarget.com/whatis/definition/interrupt](https://www.tutorialspoint.com/assembly_programming/assembly_registers.htm)
+[Tutorialspoint](https://www.tutorialspoint.com/assembly_programming/assembly_registers.htm)
 
 - - - -
 
