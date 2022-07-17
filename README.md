@@ -3,22 +3,5 @@ ZenOS
 ZenOS is a oprating system that is under development.
 it's a idea of living differently in peace.
 
-ZenOS is not only an oprating system which can simplify the daily tasks,
+its not only an oprating system which can simplify the daily tasks,
 its an Ecosystem
-
-
-
-Inspiration Source's
-====================
-[this repository](https://github.com/cfenollosa/os-tutorial/)\
-[this document](http://www.cs.bham.ac.uk/~exr/lectures/opsys/10_11/lectures/os-dev.pdf)\
-[OSDev wiki](http://wiki.osdev.org/)\
-[the little book about OS development](https://littleosbook.github.io)\
-[JamesM's kernel development tutorials](https://web.archive.org/web/20160412174753/http://www.jamesmolloy.co.uk/tutorial_html/index.html)
-
-
-
-Contributing
-============
-
-This is a personal project just for facing deep concepts of computer so please feel free to contribute and show my issues
