@@ -71,3 +71,24 @@ times 510 - ($-$$) db 0
 dw 0xaa55 
 
 ```
+
+Runing the os
+--------------
+
+1. Install the compiler and emulator
+
+```console
+user@host:~$ sudo apt/dnf/brew/ nasm qemu -y
+```
+
+2. Compile the assembly file
+
+```console
+user@host:~$ nasm -f bin file.asm -o output.bin
+```
+
+3. Run the compiled bin file
+
+```console
+user@host:~$ qemu-system-x86_64 output.bin
+```
