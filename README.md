@@ -29,3 +29,8 @@ Inspiration Source's
 [the little book about OS development](https://littleosbook.github.io)\
 [JamesM's kernel development tutorials](https://web.archive.org/web/20160412174753/http://www.jamesmolloy.co.uk/tutorial_html/index.html)
 
+
+Contributions
+-------------
+This is a educational purpose project 
+so you are gladly welcome to express your opinions and show the issuess
