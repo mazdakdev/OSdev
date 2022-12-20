@@ -2,7 +2,7 @@ OSdev | OS development step by step guide
 -----------------------------------------
 
 this is a guide for creating an oprating system from scarth. \
-which you can face deep concepts of computers and undrestand how they works
+which you can face deep concepts of computers and undrestand how they work.
 
 
 Requirements
