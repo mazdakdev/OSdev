@@ -1,57 +1,52 @@
-# Theory
+## What is Boot Sector
 
-loading the os
---------------
+A boot sector is a physical sector on a hard drive that includes information about how to start the boot process in order to load an operating system.
 
-when the computer boots the BIOS doesn't know how to load the os , so it needs a boot sector.
-since there isn't any oprating systems , there isn't any path of boot sector.
-so in order to load it ,  the BIOS must know the physical location of boot sector on the disk. (cylinder 0, head 0, sector 0) 
-and it's 512 byte.
+Note: A sector on a hard drive is a section of the disk that can be read or written to. It is typically 512 bytes in size and contains data such as file information or boot instructions.
 
-to make sure there is a bootable disk , bios needs to check a signature. 
-the 511 and 512 bytes of boot sector must be `0xAA55`.
+## BIOS
 
-Interupts
----------
-An interrupt is a signal emitted by a device attached to a computer or from a program within the computer. It requires the operating system (OS) to stop and figure out what to do next. An interrupt temporarily stops or terminates a service or a current process.
+BIOS stands for Basic Input/Output System, which is a program that runs on a computer's motherboard. It is responsible for initializing hardware components during the boot process and providing a basic set of instructions to the operating system to enable it to start. It also provides a low-level interface for communicating with hardware components, such as hard drives and keyboards.
 
-[TeachTarget](https://www.techtarget.com/whatis/definition/interrupt)
+## Basically How
 
-CPU Registers
--------------
-To speed up the processor operations, the processor includes some internal memory storage locations, called registers. The registers store data elements for processing without having to access the memory. A limited number of registers are built into the processor chip.
+When a computer starts up, the BIOS doesn't know how to load the operating system and requires a boot sector to do so. However, since there is no operating system, there is no path to the boot sector. To load it, the BIOS must know the physical location of the boot sector on the disk, which is cylinder 0, head 0, sector 0, and it's 512 bytes in size.
 
-[Tutorialspoint](https://www.tutorialspoint.com/assembly_programming/assembly_registers.htm)
+To ensure that a disk is bootable, the BIOS checks for a specific signature. Specifically, the 511th and 512th bytes of the boot sector must be `0xAA55`.
 
-- - - -
+![](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fqph.fs.quoracdn.net%2Fmain-qimg-4c2c19e8f68405c99d125c58414f6359&f=1&nofb=1&ipt=c72bdb62d557c3762a309d11c657982b5ea040ea4ca2ce33607b7f207d3e1fd0&ipo=images)
 
-# Code 
+## BIOS **Interrupts**
 
-Simple Boot Sector
-------------------
+BIOS interrupts are software interrupts that are triggered by the BIOS during the boot process. These interrupts provide a way for the BIOS to communicate with the operating system and other software running on the computer. They can be used to perform tasks such as reading from or writing to disk, initializing hardware components, or performing low-level system functions. When an interrupt is triggered, the processor stops executing the current program and switches to the interrupt handler, which is a special routine that performs the required task before returning control to the main program.
+
+## CPU Registers
+
+CPU registers are small, high-speed storage locations within the CPU that are used to hold data that is being processed or manipulated. They are typically measured in bits, such as 8-bit or 32-bit registers, and can be used to store things like memory addresses, data being processed, and status information. Registers are an important component of a computer's architecture, as they allow for fast access to frequently used data and can greatly improve performance.
+
+---
+
+# Code
+
+### Simple Boot Sector
 
 ```nasm
-
-jmp $ ;Jump to the current address (Infinite loop)
+****jmp $ ;Jump to the current address (Infinite loop)****
 
 ; Fill with 510 zeros minus the size of the previous code
 times 510-($-$$) db 0
 
-; and this is that bios signature 
-dw 0xaa55 
+; the previously mentioned bios signature
+dw 0xaa55
 ```
 
+### Hello World !
 
-Printing a Character
---------------------
+In order to print a single character we use the BIOS interrupt `0x10` which is responsible for various video services.
 
-in order to print a charcter we must:
+with `AH` set to `0x0E` (tty mode) and `AL` set to the ASCII value of the character to be displayed will display a single character on the screen.
 
-1. switch to tty mode by setting the register ah to 0x0e
-2. set the register al to the charcter we want to print
-3. and finaly use interupt 0x10
-
-Note: we can repeat this actions to print a string (of course there is a better way to do this)
+Basically the interrupt `0x10` reads the `AX` register which is 16-bit register consisted of `AH:AL`
 
 ```nasm
 mov ah, 0x0e ; tty mode
@@ -68,12 +63,10 @@ int 0x10
 jmp $ ; jump to current address (infinite loop)
 
 times 510 - ($-$$) db 0
-dw 0xaa55 
-
+dw 0xaa55
 ```
 
-Runing the os
---------------
+## Runing the os
 
 1. Install the compiler and emulator
 
