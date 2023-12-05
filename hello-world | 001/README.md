@@ -1,10 +1,10 @@
-## What is Boot Sector
+## What is Boot Sectors
 
 A boot sector is a physical sector on a hard drive that includes information about how to start the boot process in order to load an operating system.
 
 Note: A sector on a hard drive is a section of the disk that can be read or written to. It is typically 512 bytes in size and contains data such as file information or boot instructions.
 
-## BIOS
+## The BIOS
 
 BIOS stands for Basic Input/Output System, which is a program that runs on a computer's motherboard. It is responsible for initializing hardware components during the boot process and providing a basic set of instructions to the operating system to enable it to start. It also provides a low-level interface for communicating with hardware components, such as hard drives and keyboards.
 
@@ -16,19 +16,19 @@ To ensure that a disk is bootable, the BIOS checks for a specific signature. Spe
 
 ![](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fqph.fs.quoracdn.net%2Fmain-qimg-4c2c19e8f68405c99d125c58414f6359&f=1&nofb=1&ipt=c72bdb62d557c3762a309d11c657982b5ea040ea4ca2ce33607b7f207d3e1fd0&ipo=images)
 
-## BIOS **Interrupts**
+## The BIOS **Interrupts**
 
 BIOS interrupts are software interrupts that are triggered by the BIOS during the boot process. These interrupts provide a way for the BIOS to communicate with the operating system and other software running on the computer. They can be used to perform tasks such as reading from or writing to disk, initializing hardware components, or performing low-level system functions. When an interrupt is triggered, the processor stops executing the current program and switches to the interrupt handler, which is a special routine that performs the required task before returning control to the main program.
 
-## CPU Registers
+## The CPU Registers
 
 CPU registers are small, high-speed storage locations within the CPU that are used to hold data that is being processed or manipulated. They are typically measured in bits, such as 8-bit or 32-bit registers, and can be used to store things like memory addresses, data being processed, and status information. Registers are an important component of a computer's architecture, as they allow for fast access to frequently used data and can greatly improve performance.
 
 ---
 
-# Code
+# The Code
 
-### Simple Boot Sector
+### A Simple Boot Sector
 
 ```nasm
 jmp $ ;Jump to the current address (Infinite loop)****
